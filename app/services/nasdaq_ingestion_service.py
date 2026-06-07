@@ -23,17 +23,6 @@ NASDAQ_DATASET_CODE = "NDAQ/RTAT10"
 
 
 class NasdaqDataLinkIngestionService:
-    """
-    Ingests real external financial data from Nasdaq Data Link.
-
-    The assignment mentions Nasdaq Data Link and BITFINEX as example financial
-    data providers/datasets. This implemented live provider demo uses the
-    accessible Nasdaq Data Link table NDAQ/RTAT10.
-
-    The warehouse supports heterogeneous data, so the Nasdaq records store
-    an 'activity' indicator while the CSV fallback stores OHLCV crypto data.
-    """
-
     def __init__(self):
         self.api_key = os.getenv("NASDAQ_DATA_LINK_API_KEY")
 
@@ -45,7 +34,7 @@ class NasdaqDataLinkIngestionService:
         if not self.api_key:
             raise ValueError(
                 "NASDAQ_DATA_LINK_API_KEY is missing. "
-                "Add it to C:\\Users\\teodo\\financial_project\\.env"
+                "Add it to financial_project\.env"
             )
 
     def create_data_source(self) -> None:
