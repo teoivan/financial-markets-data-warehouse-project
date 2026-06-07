@@ -29,6 +29,14 @@ def create_indexes():
         ]
     )
 
+    time_series_collection.create_index(
+        [
+            ("businessYear", ASCENDING),
+            ("assetId", ASCENDING),
+            ("dataSourceId", ASCENDING),
+        ]
+    )
+
     analytics_summaries_collection.create_index(
         [
             ("assetId", ASCENDING),
