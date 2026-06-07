@@ -73,7 +73,7 @@ def test_csv_ingestion_creates_assets_sources_and_time_series_records():
     service = CsvIngestionService()
     result = service.ingest("data/sample_market_data.csv")
 
-    assert result["jobType"] == "csv_market_data_ingestion"
+    assert result["jobType"] == "csv_ingestion"
     assert result["totalStoredRecords"] > 0
     assert result["totalFailedRecords"] == 0
 
